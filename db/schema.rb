@@ -18,6 +18,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_11_203717) do
   end
 
   create_table "mpesas", force: :cascade do |t|
+    t.string "checkoutRequestID"
+    t.string "merchantRequestID"
+    t.string "amount"
+    t.string "mpesaReceiptNumber"
+    t.string "phoneNumber"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
