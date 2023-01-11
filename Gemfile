@@ -66,6 +66,8 @@ end
 
 gem "rack-cors"
 
+gem "rest-client"
+
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
