@@ -47,6 +47,8 @@ class MpesasController < ApplicationController
             fail "Invalid response #{response.to_str} received."
           end
         end
+
+    render json: response
   end
 
   private
