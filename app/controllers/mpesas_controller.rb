@@ -22,7 +22,17 @@ class MpesasController < ApplicationController
   end
 
   def get_access_token
+    res = generate_access_token_request
 
-    
+    if res != 200
+      r = generate_access_token_request
+      raise MpesaError("Unable to generate access token") if res.code != 200
+    end
+
+    body = JSON.parse(res, { symbolize_names: true })
+    token = body[:acces_token]
+    AccessToken.destroy_all()
+    AccessToken.create!(token: token)
+    token
   end
 end
