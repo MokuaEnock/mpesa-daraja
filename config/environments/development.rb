@@ -11,13 +11,14 @@ Rails.application.configure do
   # Do not eager load code on boot.
   config.eager_load = false
 
-  config.hosts << /[a-z0–9-.]+\.ngrok\.io/
-
   # Show full error reports.
   config.consider_all_requests_local = true
 
   # Enable server timing
   config.server_timing = true
+
+  # allow ngrok to work
+  config.hosts << /.*\.ngrok\.io/
 
   # Enable/disable caching. By default caching is disabled.
   # Run rails dev:cache to toggle caching.
